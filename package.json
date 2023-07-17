@@ -9,5 +9,11 @@
     "build": "vite build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "vite": "^4.0.4"
+  }
 }

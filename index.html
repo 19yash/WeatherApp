@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+</head>
+<body class="font-'Merriweather Sans'">
+    
+    <div class="wrapper w-[100vw] h-[100vh] flex flex-col justify-start items-center">
+      
+        <h1 class="text-center text-[2rem] text-white font-bold pt-6 w-[90%] max-w-xs uppercase">Weather App</h1>
+        
+        <!-- tab container -->
+        <div class="tab-container flex justify-between  text-white w-[90%] max-w-xl mt-12">
+            <p class = "cursor-pointer bg-[rgba(219,226,239,0.5)] text-sm capitalize text-[rgb(249,247,247)] rounded-[0.25rem] px-2 py-1" 
+                user-tab>your Weather</p>
+            <p class = "cursor-pointer text-sm capitalize text-[rgb(249,247,247)] rounded-[0.25rem] px-2 py-1" search-tab>search Weather</p>
+        </div>
+        <!--Location tab  -->
+        <div class="location   w-[90%] max-w-xs text-center mt-16">
+            <img src="weather-app-images/location.png" alt="" class="w-20 mx-auto">
+            <p class="text-[#f9f7f7] text-[1.75rem] capitalize mt-6">Grant Location Access</p>
+            <p class="text-[#f9f7f7] text-sm capatalize m-2">Allow access to get weather information</p>
+            <button class="btn text-[#f9f7f7]  bg-[#3f72af] text-sm font-normal rounded-md px-5 py-1 uppercase mt-6" onclick="getlocation()">Grant Access</button>
+        </div>
+
+        <!-- search tab -->
+        <div class="w-[90%] max-w-xs mt-8 hidden" search-container>
+            <input type="text" citynameinput class="w-[90%]">
+            <!-- <div search > -->
+                <img search src="weather-app-images/search.png" alt="" class="w-6 inline-block" onclick="handlesearch()">
+            <!-- </div> -->
+        </div>
+        <!-- loading img -->
+        <img src="weather-app-images/loading.gif" alt="" class="w-48 hidden " loading >
+        <!-- error img -->
+        <img src="weather-app-images/not-found.png" alt="" class="w-56 hidden" error>
+       
+        <div class="weather-container " hidden>
+            <p city-display class="text-[#f9f7f7] text-[2rem] text-center"></p>
+            <img src="" alt="" country-flag>
+            <p weather class="text-[#f9f7f7] text-2xl text-center"></p>
+            <img src="" alt="" weather-img class="w-24 h-auto mx-auto" >
+            <p temprature class="text-[#f9f7f7] text-[2.75rem] text-center" ></p>
+
+            <div weather-description class=" flex  flex-1 ">
+                <div class="bg-[rgba(219,266,239,0.5)] 
+                 flex flex-col justify-center items-center p-4 rounded-md">
+                    <img src="weather-app-images/wind.png" alt="" class="w-[3.25rem]">
+                    <p class="text-white text-lg">Windspeed</p>
+                    <p class="text-white " windspeed-val></p>
+                </div>
+
+                <div class="bg-[rgba(219,266,239,0.5)] 
+                flex flex-col justify-center items-center p-4 rounded-md">
+                    <img src="weather-app-images/humidity.png" alt="" class="w-[3.25rem]">
+                    <p class="text-white text-lg">Humidity</p>
+                    <p class="text-white" humidity-val ></p>
+                </div>
+                <div class="bg-[rgba(219,266,239,0.5)] 
+                 flex flex-col justify-center items-center p-4 rounded-md ">
+                    <img src="weather-app-images/cloud.png" alt="" class="w-[3.25rem]">
+                    <p class="text-white text-lg">Clouds</p>
+                    <p class="text-white" cloud-val></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <!-- <script src="index2.js"></script> -->
+</body>
+</html>
